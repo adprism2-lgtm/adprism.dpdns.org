@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, ChevronDown, Sparkles } from "lucide-react";
 import heroImg from "@/assets/hero-reel.jpg";
-import logo from "@/assets/adprism-logo.png.asset.json";
 import { BRAND } from "@/data/content";
 import VideoModal from "./VideoModal";
 
@@ -120,7 +119,7 @@ const Hero = () => {
 
       {/* Floating holographic logo */}
       <motion.img
-        src={logo.url}
+        src="/adprism-logo.png"
         alt=""
         aria-hidden
         initial={{ opacity: 0, scale: 0.8 }}

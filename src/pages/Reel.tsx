@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, Play, Pause, Sparkles } from "lucide-react";
 import { BRAND } from "@/data/content";
 import { DRIVE_PHOTOS, drivePhotoThumb } from "@/data/drivePhotos";
-import logo from "@/assets/adprism-logo.png.asset.json";
 import Seo from "@/components/Seo";
 
 /** Convert a Drive preview/file URL into an embeddable src. */
@@ -94,7 +93,7 @@ const Reel = () => {
         >
           <ArrowLeft className="h-4 w-4" /> Back
         </Link>
-        <img src={logo.url} alt="ADPRISM" className="h-9 w-auto" />
+        <img src="/adprism-logo.png" alt="ADPRISM" className="h-9 w-auto" />
       </div>
 
       {/* Hero showreel */}

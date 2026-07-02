@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { BRAND } from "@/data/content";
-import logo from "@/assets/adprism-logo.png.asset.json";
 
 const LINKS = [
   { label: "Work", href: "#portfolio" },
@@ -29,7 +28,7 @@ const Navbar = () => {
     >
       <nav className="container flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
-          <img src={logo.url} alt="ADPRISM logo" className="h-14 w-auto" />
+          <img src="/adprism-logo.png" alt="ADPRISM logo" className="h-14 w-auto" />
         </a>
 
         <ul className="hidden items-center gap-9 md:flex">

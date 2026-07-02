@@ -4,7 +4,6 @@ import { BRAND } from "@/data/content";
 import { CITIES } from "@/data/cities";
 import WhatsApp from "@/components/icons/WhatsApp";
 import { trackWhatsAppClick } from "@/lib/trackWhatsApp";
-import logo from "@/assets/adprism-logo.png.asset.json";
 
 const Footer = () => {
   return (
@@ -28,7 +27,7 @@ const Footer = () => {
 
       <div className="container flex flex-col items-center justify-between gap-8 md:flex-row">
         <a href="#top" className="flex items-center gap-3">
-          <img src={logo.url} alt="ADPRISM logo" className="h-16 w-auto" />
+          <img src="/adprism-logo.png" alt="ADPRISM logo" className="h-16 w-auto" />
         </a>
 
         <div className="flex items-center gap-6">
