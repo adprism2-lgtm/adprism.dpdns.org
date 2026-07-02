@@ -1,0 +1,9 @@
+# ADPRISM Studio
+
+> ADPRISM is a next-generation photography and videography studio creating cinematic visuals for brands — videography, corporate documentaries, exhibition coverage, product photography, aerial drone coverage, and filmmaking.
+
+## Pages
+
+- [Home](/): Studio overview, services, portfolio, films, exhibitions, testimonials, and contact.
+- [Portfolio Gallery](/gallery): Full collection of photography work across corporate, product, and exhibition coverage.
+- [Cinematic Reel](/reel): A single scrolling showreel compiling ADPRISM's best event and brand visuals.
