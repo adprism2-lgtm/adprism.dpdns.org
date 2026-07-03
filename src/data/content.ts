@@ -87,36 +87,27 @@ export type Category =
   | "Exhibitions"
   | "Films";
 
-const portfolioModules = import.meta.glob(
-  "@/assets/portfolio/*.asset.json",
-  { eager: true },
-);
-
-
 const PORTFOLIO_CATEGORIES: Exclude<Category, "All">[] = [
   "Exhibitions",
   "Corporate",
   "Product",
 ];
 
+// This maps directly to your 33 files in the public folder
 export const PORTFOLIO: {
   img: string;
   title: string;
   category: Exclude<Category, "All">;
-}[] = Object.entries(portfolioModules)
-  .map(([path, mod]) => {
-    const url = (mod as { default: { url: string } }).default.url;
-    const file = path.split("/").pop() || "";
-    // Filenames look like "photo-07.jpg.asset.json" — use the number to
-    // spread images evenly across category tabs.
-    const num = parseInt(file.replace(/\D/g, ""), 10) || 0;
-    const category =
-      PORTFOLIO_CATEGORIES[num % PORTFOLIO_CATEGORIES.length];
-    const title = `${category} Coverage`;
-    return { img: url, title, category };
-  });
-
-
+}[] = Array.from({ length: 33 }).map((_, i) => {
+  const num = (i + 1).toString().padStart(2, '0');
+  const category = PORTFOLIO_CATEGORIES[i % PORTFOLIO_CATEGORIES.length];
+  
+  return {
+    img: `/photo-${num}.jpg`,
+    title: `${category} Coverage`,
+    category: category,
+  };
+});
 
 const filmThumbs = import.meta.glob("@/assets/films/*.asset.json", {
   eager: true,
