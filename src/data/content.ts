@@ -15,6 +15,8 @@ import DroneCamera from "@/components/icons/DroneCamera";
  * Swap image imports and video URLs here to replace all placeholder media
  * without touching any layout code.
  */
+export const drivePhotoThumb = (id: string, size = 400): string =>
+  `https://lh3.googleusercontent.com/d/${id}=w${size}-h${size}-p`;
 
 export const BRAND = {
   name: "ADPRISM",
