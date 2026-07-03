@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { BRAND } from "@/data/content";
-import logo from "@/assets/adprism-logo.png.asset.json";
+import logo from <img src="/adprism-logo.png" alt="ADPRISM Logo" />;
 
 const LINKS = [
   { label: "Work", href: "#portfolio" },
