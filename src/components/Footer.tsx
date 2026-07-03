@@ -19,7 +19,31 @@ const Footer = () => {
           <img src="/adprism-logo.png" alt="ADPRISM logo" className="h-16 w-auto" />
         </a>
 
-        {/* ... keep the social icons and copyright section as is ... */}
+      <div className="flex items-center gap-6">
+          <a href={BRAND.socials.instagram} aria-label="Instagram" className="text-muted-foreground hover:text-primary">
+            <Instagram className="h-5 w-5" />
+          </a>
+          <a href={BRAND.socials.facebook} aria-label="Facebook" className="text-muted-foreground hover:text-primary">
+            <Facebook className="h-5 w-5" />
+          </a>
+          <a href={BRAND.socials.linkedin} aria-label="LinkedIn" className="text-muted-foreground hover:text-primary">
+            <Linkedin className="h-5 w-5" />
+          </a>
+          <a
+            href={BRAND.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick("footer")}
+            aria-label="WhatsApp"
+            className="text-muted-foreground hover:text-primary"
+          >
+            <WhatsApp className="h-5 w-5" />
+          </a>
+        </div>
+
+        <p className="text-xs uppercase tracking-widest text-muted-foreground">
+          © {new Date().getFullYear()} {BRAND.name}
+        </p>
       </div>
     </footer>
   );
