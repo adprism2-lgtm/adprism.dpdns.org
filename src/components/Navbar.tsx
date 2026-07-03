@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { BRAND } from "@/data/content";
-import logo from "@/assets/adprism-logo.png.asset.json"; 
-
 
 const LINKS = [
   { label: "Work", href: "#portfolio" },
@@ -30,7 +28,8 @@ const Navbar = () => {
     >
       <nav className="container flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
-          <img src={logo.url} alt="ADPRISM logo" className="h-14 w-auto" />
+          {/* Changed this line to use the direct public path */}
+          <img src="/adprism-logo.png" alt="ADPRISM logo" className="h-14 w-auto" />
         </a>
 
         <ul className="hidden items-center gap-9 md:flex">
@@ -62,23 +61,7 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {open && (
-        <div className="glass mt-3 md:hidden">
-          <ul className="container flex flex-col gap-4 py-6">
-            {LINKS.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="text-sm uppercase tracking-widest text-muted-foreground"
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {/* ... rest of your code ... */}
     </header>
   );
 };
