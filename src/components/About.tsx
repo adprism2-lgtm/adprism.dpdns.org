@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import portraitAsset from "@/assets/about-portrait.png.asset.json";
 import { BRAND } from "@/data/content";
 
 const stats = [
@@ -59,16 +58,17 @@ const About = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative"
+          className="relative" 
+          
         >
-          <img
-            src={portraitAsset.url}
-            alt="Portrait of the photographer and filmmaker holding a camera"
-            width={896}
-            height={1152}
-            loading="lazy"
-            className="w-full rounded-sm object-cover shadow-deep"
-          />
+         <img
+  src="/about-portrait.png"
+  alt="Portrait of the photographer and filmmaker holding a camera"
+  width={896}
+  height={1152}
+  loading="lazy"
+  className="w-full rounded-sm object-cover shadow-deep"
+/>
           <div className="absolute -bottom-6 -right-4 hidden rounded-sm border border-primary/40 bg-background/90 px-6 py-4 backdrop-blur sm:block">
             <p className="font-display text-lg text-primary">{BRAND.owner}</p>
             <p className="text-xs uppercase tracking-widest text-muted-foreground">
