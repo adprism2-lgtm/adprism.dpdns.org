@@ -1,10 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, ChevronDown, Sparkles } from "lucide-react";
+import heroImg from "@/assets/hero-reel.jpg";
 import { BRAND } from "@/data/content";
 import VideoModal from "./VideoModal";
 
-// ... (WORDS constant remains the same)
+// Words that rotate in the headline with a smooth fade + slide-up motion.
+const WORDS = [
+  "Visuals.",
+  "Stories.",
+  "Brands.",
+  "Impact.",
+  "Experiences.",
+  "Films.",
+  "Campaigns.",
+  "Content.",
+];
 
 const Hero = () => {
   const [open, setOpen] = useState(false);
