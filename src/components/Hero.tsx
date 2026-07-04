@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, ChevronDown, Sparkles } from "lucide-react";
 import heroImg from "@/assets/hero-reel.jpg";
-import logo from "@/assets/adprism-logo.png.asset.json";
 import { BRAND } from "@/data/content";
 import VideoModal from "./VideoModal";
 
@@ -29,19 +28,17 @@ const Hero = () => {
     return () => clearInterval(t);
   }, []);
 
-
-
-
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Background image + futuristic overlays */}
+      {/* 1. UPDATED BACKGROUND IMAGE PATH */}
       <img
-        src={heroImg}
+        src="/hero-reel.jpg" 
         alt="Videographer filming a cinematic event"
         width={1920}
         height={1088}
         className="absolute inset-0 h-full w-full object-cover opacity-40"
       />
+      
       <div className="absolute inset-0 bg-background/80" />
       <div className="absolute inset-0 grid-lines opacity-70" />
       <div className="absolute inset-0 bg-radial-glow" />
@@ -120,7 +117,7 @@ const Hero = () => {
 
       {/* Floating holographic logo */}
       <motion.img
-        src={logo.url}
+        src="/adprism-logo.png"
         alt=""
         aria-hidden
         initial={{ opacity: 0, scale: 0.8 }}
