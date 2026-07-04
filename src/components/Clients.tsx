@@ -5,20 +5,58 @@ const modules = import.meta.glob("@/assets/clients/*.asset.json", {
   eager: true,
 });
 
-const clients = Object.entries(modules)
-  .map(([path, mod]) => {
-    const url = (mod as { default: { url: string } }).default.url;
-    const file = path.split("/").pop() || "";
-    const name = file
-      .replace(".jpg.asset.json", "")
-      .replace(/-/g, " ")
-      .replace(/\b\w/g, (c) => c.toUpperCase());
-    return { url, name };
-  })
-  .sort((a, b) => a.name.localeCompare(b.name));
 
+
+  // 1. Delete the "const modules = ..." and "const clients = ..." blocks entirely.
+
+// 2. Replace them with this static list:
+const CLIENTS = [
+  { name: "Al Momin", url: "/al-momin.jpg" },
+  { name: "Angel", url: "/angel.jpg" },
+  { name: "Ashraf Group", url: "/ashraf-group.jpg" },
+  { name: "Atzaa", url: "/atzaa.jpg" },
+  { name: "Byd", url: "/byd.jpg" },
+  { name: "Ccl", url: "/ccl.jpg" },
+  { name: "Delsol", url: "/delsol.jpg" },
+  { name: "Diwan International", url: "/diwan-international.jpg" },
+  { name: "Dreams Network", url: "/dreams-network.jpg" },
+  { name: "Dulzer", url: "/dulzer.jpg" },
+  { name: "Emerging Green Solution", url: "/emerging-green-solution.jpg" },
+  { name: "Far Eastern Impex", url: "/far-eastern-impex.jpg" },
+  { name: "Gear Globe", url: "/gear-globe.jpg" },
+  { name: "Govt Crescent", url: "/govt-crescent.jpg" },
+  { name: "Gp", url: "/gp.jpg" },
+  { name: "Graceware", url: "/graceware.jpg" },
+  { name: "Green House", url: "/green-house.jpg" },
+  { name: "Huawei Fusionsolar", url: "/huawei-fusionsolar.jpg" },
+  { name: "Jinko Solar", url: "/jinko-solar.jpg" },
+  { name: "Karachi Essence House", url: "/karachi-essence-house.jpg" },
+  { name: "Lion Wave Solutions", url: "/lion-wave-solutions.jpg" },
+  { name: "Mars Power", url: "/mars-power.jpg" },
+  { name: "Midea", url: "/midea.jpg" },
+  { name: "Onerun", url: "/onerun.jpg" },
+  { name: "Pakistan Tobacco", url: "/pakistan-tobacco.jpg" },
+  { name: "Pelco", url: "/pelco.jpg" },
+  { name: "Powerhouse", url: "/powerhouse.jpg" },
+  { name: "Pro Exhibitions", url: "/pro-exhibitions.jpg" },
+  { name: "Pv360", url: "/pv360.jpg" },
+  { name: "Rootech Pakistan", url: "/rootech-pakistan.jpg" },
+  { name: "Sindh Talent Hunt", url: "/sindh-talent-hunt.jpg" },
+  { name: "Sofcom", url: "/sofcom.jpg" },
+  { name: "Solar Citizen", url: "/solar-citizen.jpg" },
+  { name: "Sports In Pakistan", url: "/sports-in-pakistan.jpg" },
+  { name: "Sufi", url: "/sufi.jpg" },
+  { name: "Super International", url: "/super-international.jpg" },
+  { name: "The Trillium", url: "/the-trillium.jpg" },
+  { name: "Tmi", url: "/tmi.jpg" },
+  { name: "Tribuild", url: "/tribuild.jpg" },
+  { name: "Urooj Plastic", url: "/urooj-plastic.jpg" },
+];
+
+// 3. Update the loop in the Clients component:
 const Clients = () => {
-  const loop = [...clients, ...clients];
+  const loop = [...CLIENTS, ...CLIENTS];
+  // ... rest of your component
 
   return (
     <section id="clients" className="relative overflow-hidden py-24">
